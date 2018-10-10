@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>JavaScript basic 004</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand">JavaScript basic</div>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h5 class="display-5"><span class="badge badge-info">004</span> Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.</h5>
+        <p><samp>Using Heron's formula:<br>
+            The shape of the triangle is determined by the lengths of the sides. Therefore, the area can also be derived from the lengths of the sides.<br>
+            <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1c17aa0115320b3e0cddc5c38aaccd0e9bc7ddc8" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:28.604ex; height:4.843ex;" alt="T={\sqrt {s(s-a)(s-b)(s-c)}}">
+            where <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21dbbfafb813cea25e7ceeee5ea3068c36e9e104" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.171ex; width:9.869ex; height:3.676ex;" alt="s={\tfrac {a+b+c}{2}}"> is the semiperimeter, or half of the triangle's perimeter.</samp></p>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                Triange field is:
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="solution">solution here</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script>
+      
+      // Triangle sides length
+      let a = 5;
+      let b = 6;
+      let c = 7;
+      
+      // Semiperimeter, or half of the triangle's perimeter
+      let s = (a + b + c) / 2;
+
+      // Field
+      let t = Math.sqrt(s * ( (s-a) * (s-b) * (s-c) ) );
+      
+      document.getElementById('solution').innerHTML = t;
+      
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
