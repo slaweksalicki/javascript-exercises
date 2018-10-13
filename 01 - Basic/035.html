@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>JavaScript basic 005</title>
+    <title>JavaScript basic 035</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -18,37 +18,55 @@
     </nav>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h5 class="display-5"><span class="badge badge-info">005</span> Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.</h5>
+        <h5 class="display-5"><span class="badge badge-info">035</span> Write a JavaScript program to check a given string contains 2 to 4 numbers of a specified character.</h5>
         <p><samp></samp></p>
       </div>
     </div>
     <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">
-                Rotating string 'w3resource':
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="solution">solution here</li>
-              </ul>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Check if '<strong>JavaScript is a programming language</strong>' contains 2 to 4 numbers of a specified character:
             </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <input type="text" class="form-control m-2" id="inputCharacter" maxlength="1">
+                  <button class="btn btn-primary m-2" onclick="checkString()">Check</button> 
+                </div>
+              </li>
+              <li class="list-group-item">Result: <span id="solution"></span></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
     
     <script>
 
-      let showRotation = setInterval(rotateString, 400);
-      
-      let word = 'w3resource';
+      function checkString() {
 
-      function rotateString() {
-        document.getElementById('solution').innerHTML = word;
-        let lastLetter = word.substring(word.length, word.length - 1);
-        word = lastLetter + word.substring(0, word.length - 1);
+        let currentString = 'JavaScript is a programming language'.split("");
+
+        let inputCharacter = document.querySelector('#inputCharacter').value;
+
+        let searchCharactersNumber = 0;
+
+        for (i = 0; i < currentString.length; i++) {
+          if (currentString[i] === inputCharacter) {
+            searchCharactersNumber++;
+          }
+
+        }
+
+        (searchCharactersNumber >=2 && searchCharactersNumber <=4) 
+          ? document.querySelector('#solution').innerHTML = true
+          : document.querySelector('#solution').innerHTML = false
+        ;
+
       }
-      
+
     </script>
 
     <!-- Optional JavaScript -->

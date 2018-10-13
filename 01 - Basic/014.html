@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>JavaScript basic 005</title>
+    <title>JavaScript basic 014</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -18,37 +18,36 @@
     </nav>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h5 class="display-5"><span class="badge badge-info">005</span> Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.</h5>
+        <h5 class="display-5"><span class="badge badge-info">014</span> Write a JavaScript exercise to get the extension of a filename.</h5>
         <p><samp></samp></p>
       </div>
     </div>
     <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">
-                Rotating string 'w3resource':
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="solution">solution here</li>
-              </ul>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              File name <strong>someImage.jpg</strong> and its extension is:
             </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" id="solution">
+              </li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
     
     <script>
 
-      let showRotation = setInterval(rotateString, 400);
-      
-      let word = 'w3resource';
+      let fileName = 'someImage.jpg';
 
-      function rotateString() {
-        document.getElementById('solution').innerHTML = word;
-        let lastLetter = word.substring(word.length, word.length - 1);
-        word = lastLetter + word.substring(0, word.length - 1);
-      }
-      
+      let getExt = fileName.split(".");
+
+      let solution = getExt[1];
+
+      document.querySelector('#solution').innerHTML = solution;       
+
     </script>
 
     <!-- Optional JavaScript -->

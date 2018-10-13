@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>JavaScript basic 011</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand">JavaScript basic</div>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h5 class="display-5"><span class="badge badge-info">011</span> Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.</h5>
+        <p><samp>[ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]<br>
+            Expected Output :<br>
+            60°C is 140 °F<br>
+            45°F is 7.222222222222222°C</samp></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Temperature calculator °F to °C:
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  
+                <div class="form-inline form-row">
+                  <div class="col">
+                    <input type="number" class="form-control" id="farenheitInput">
+                  </div>
+                  <div class="col">
+                    <label>°F &rArr; </label>
+                  </div>
+                  <div class="col">
+                    <input type="number" class="form-control" id="celsiusOutput" disabled>
+                  </div>
+                  <div class="col">
+                    <label>°C</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item" id="scoreLi">
+                  <button class="btn btn-primary mb-2" onclick="farenheitToCelsius()">Convert</button> 
+              </li>
+              </ul>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card">
+              <div class="card-header">
+                Temperature calculator °C to °F:
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    
+                  <div class="form-inline form-row">
+                    <div class="col">
+                      <input type="number" class="form-control" id="celsiusInput">
+                    </div>
+                    <div class="col">
+                      <label>°C &rArr; </label>
+                    </div>
+                    <div class="col">
+                      <input type="number" class="form-control" id="farenheitOutput" disabled>
+                    </div>
+                    <div class="col">
+                      <label>°F</label>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item" id="scoreLi">
+                    <button class="btn btn-primary mb-2" onclick="celsiusToFarenheit()">Convert</button> 
+                </li>
+                </ul>
+            </div>
+          </div>
+  
+      </div>
+    </div>
+    
+    <script>
+
+      function farenheitToCelsius() {
+        let farenheitInput = document.querySelector('#farenheitInput').value;
+        let calcCelsius = (farenheitInput - 32) * (5 / 9);
+        let celsiusOutput = document.querySelector('#celsiusOutput').value = calcCelsius;
+      }
+
+      function celsiusToFarenheit() {
+        let celsiusInput = document.querySelector('#celsiusInput').value;
+        let calcFarenheit = (celsiusInput * (9/5)) + 32;
+        let farenheitOutput = document.querySelector('#farenheitOutput').value = calcFarenheit;
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

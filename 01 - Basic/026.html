@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>JavaScript basic 005</title>
+    <title>JavaScript basic 026</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -18,37 +18,47 @@
     </nav>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h5 class="display-5"><span class="badge badge-info">005</span> Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.</h5>
+        <h5 class="display-5"><span class="badge badge-info">026</span> Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.</h5>
         <p><samp></samp></p>
       </div>
     </div>
     <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">
-                Rotating string 'w3resource':
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="solution">solution here</li>
-              </ul>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+                Take the last 3 characters and added at both the front and back:
             </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <input type="text" class="form-control m-2" id="inputText">
+                  <button class="btn btn-primary m-2" onclick="createString()">Change!</button> 
+                </div>
+              </li>
+              <li class="list-group-item">Result: <span id="solution"></span></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
     
     <script>
 
-      let showRotation = setInterval(rotateString, 400);
-      
-      let word = 'w3resource';
+      function createString() {
 
-      function rotateString() {
-        document.getElementById('solution').innerHTML = word;
-        let lastLetter = word.substring(word.length, word.length - 1);
-        word = lastLetter + word.substring(0, word.length - 1);
+        let inputText = document.querySelector('#inputText').value;
+
+        if (inputText.length >= 3) {
+          let last3Letters = inputText.substring(inputText.length - 3, inputText.length + 1);
+          let newString = last3Letters + inputText + last3Letters;
+          document.querySelector('#solution').innerHTML = newString;
+        } else {
+          document.querySelector('#solution').innerHTML = 'String has less than 3 characters';
+        }
+         
       }
-      
+
     </script>
 
     <!-- Optional JavaScript -->
