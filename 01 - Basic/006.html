@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>JavaScript basic 005</title>
+    <title>JavaScript basic 006</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -18,8 +18,12 @@
     </nav>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h5 class="display-5"><span class="badge badge-info">005</span> Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.</h5>
-        <p><samp></samp></p>
+        <h5 class="display-5"><span class="badge badge-info">006</span> Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.</h5>
+        <p><samp>Algoritm (from Wikipedia):<br>
+          if (year is not divisible by 4) then (it is a common year)<br>
+          else if (year is not divisible by 100) then (it is a leap year)<br>
+          else if (year is not divisible by 400) then (it is a common year)<br>
+          else (it is a leap year) </samp></p>
       </div>
     </div>
     <div class="container">
@@ -27,10 +31,20 @@
           <div class="col">
             <div class="card">
               <div class="card-header">
-                Rotating string 'w3resource':
+
+                <span class="form-inline">
+                  <div class="form-group mb-2">
+                    <label>Is this year leap?</label>
+                  </div>
+                  <div class="form-group mx-sm-3 mb-2">
+                    <input type="number" class="form-control" id="yearInput" placeholder="Type year here...">
+                  </div>
+                  <button class="btn btn-primary mb-2" onclick="yearCheck()">Check it!</button>
+                </span>
+
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="solution">solution here</li>
+                <li class="list-group-item">This year is: <strong><span id="solution"></span>!</strong></li>
               </ul>
             </div>
           </div>
@@ -38,15 +52,21 @@
       </div>
     
     <script>
-
-      let showRotation = setInterval(rotateString, 400);
       
-      let word = 'w3resource';
+      function yearCheck() {
 
-      function rotateString() {
-        document.getElementById('solution').innerHTML = word;
-        let lastLetter = word.substring(word.length, word.length - 1);
-        word = lastLetter + word.substring(0, word.length - 1);
+        let yearInput = document.getElementById('yearInput').value;
+
+        if(yearInput % 4 != 0) {
+          document.getElementById('solution').innerHTML = 'not leap';
+        } else if (yearInput % 100 != 0) {
+          document.getElementById('solution').innerHTML = 'leap';
+        } else if (yearInput % 400 != 0) {
+          document.getElementById('solution').innerHTML = 'not leap';
+        } else {
+          document.getElementById('solution').innerHTML = 'leap';
+        }
+
       }
       
     </script>
