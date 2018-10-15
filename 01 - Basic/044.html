@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>JavaScript basic 043</title>
+    <title>JavaScript basic 044</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -18,7 +18,7 @@
     </nav>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h5 class="display-5"><span class="badge badge-info">043</span>  Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.</h5>
+        <h5 class="display-5"><span class="badge badge-info">044</span>  Write a JavaScript program to check from three given integers that if a number is greater than or equal to 20 and less than one of the others.</h5>
         <p><samp></samp></p>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              Check that two or all of them have the same rightmost digit:
+              Check that if a number is greater than or equal to 20 and less than one of the others:
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
@@ -52,12 +52,10 @@
         let inputNumber2 = parseInt(document.querySelector('#inputNumber2').value);
         let inputNumber3 = parseInt(document.querySelector('#inputNumber3').value);
         
-        if (inputNumber1 < 0 || inputNumber2 < 0 || inputNumber3 < 0) {
-          document.querySelector('#solution').innerHTML = 'Numbers are not positive';
-        } else if (inputNumber1 % 10 === inputNumber2 % 10 || inputNumber2 % 10 === inputNumber3 % 10 || inputNumber1 % 10 === inputNumber3 % 10) {
-          document.querySelector('#solution').innerHTML = 'Last digits in at least two numbers are the same';
+        if ((inputNumber1 <= 20 && (inputNumber1 < inputNumber2 || inputNumber1 < inputNumber3)) || (inputNumber2 <= 20 && (inputNumber2 < inputNumber1 || inputNumber2 < inputNumber3)) || (inputNumber3 <= 20 && (inputNumber3 < inputNumber1 || inputNumber3 < inputNumber2))) {
+          document.querySelector('#solution').innerHTML = true;
         } else {
-          document.querySelector('#solution').innerHTML = 'Last digits are not the same';
+          document.querySelector('#solution').innerHTML = false;
         }
 
       }
