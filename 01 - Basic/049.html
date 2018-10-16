@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>JavaScript basic 043</title>
+    <title>JavaScript basic 049</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -18,7 +18,7 @@
     </nav>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h5 class="display-5"><span class="badge badge-info">043</span>  Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.</h5>
+        <h5 class="display-5"><span class="badge badge-info">049</span> Write a JavaScript program to replace every character in a given string with the character following it in the alphabet. </h5>
         <p><samp></samp></p>
       </div>
     </div>
@@ -27,15 +27,13 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              Check that two or all of them have the same rightmost digit:
+              Replace characters:
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <div class="form-inline form-row">
-                  <input type="number" class="form-control m-2" id="inputNumber1">
-                  <input type="number" class="form-control m-2" id="inputNumber2">
-                  <input type="number" class="form-control m-2" id="inputNumber3">
-                  <button class="btn btn-primary m-2" onclick="calculate()">Check</button> 
+                  <input type="text" class="form-control m-2" id="inputText">
+                  <button class="btn btn-primary m-2" onclick="createString()">Replace!</button> 
                 </div>
               </li>
               <li class="list-group-item">Result: <span id="solution"></span></li>
@@ -47,19 +45,38 @@
     
     <script>
 
-      function calculate() {
-        let inputNumber1 = parseInt(document.querySelector('#inputNumber1').value);
-        let inputNumber2 = parseInt(document.querySelector('#inputNumber2').value);
-        let inputNumber3 = parseInt(document.querySelector('#inputNumber3').value);
+      function createString() {
+
+        let inputText = document.querySelector('#inputText').value;
         
-        if (inputNumber1 < 0 || inputNumber2 < 0 || inputNumber3 < 0) {
-          document.querySelector('#solution').innerHTML = 'Numbers are not positive';
-        } else if (inputNumber1 % 10 === inputNumber2 % 10 || inputNumber2 % 10 === inputNumber3 % 10 || inputNumber1 % 10 === inputNumber3 % 10) {
-          document.querySelector('#solution').innerHTML = 'Last digits in at least two numbers are the same';
-        } else {
-          document.querySelector('#solution').innerHTML = 'Last digits are not the same';
+        // charCodeAt() 	Returns the Unicode of the character at the specified index
+        // fromCharCode() 	Converts Unicode values to characters
+        
+        let splitString = inputText.split("");
+        
+        let newArray = [];
+
+        let finalArray = []
+
+        for (i = 0; i < splitString.length; i++) {
+          newArray.push(inputText.charCodeAt(i) + 1);
+        }
+        
+        for (i = 0; i < newArray.length; i++) {
+          if ( String.fromCharCode(newArray[i]) == "{") {
+            finalArray.push('a');
+          } else if ( String.fromCharCode(newArray[i]) == "[") {
+            finalArray.push('Z');
+          } else if ( String.fromCharCode(newArray[i]) == ":") {
+            finalArray.push('0');
+          } else {
+            finalArray.push(String.fromCharCode(newArray[i]));
+          }
+          
         }
 
+        document.querySelector('#solution').innerHTML = finalArray.join("");
+         
       }
 
     </script>
