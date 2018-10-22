@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>JavaScript basic 057</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand">JavaScript basic</div>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h5 class="display-5"><span class="badge badge-info">057</span> Write a JavaScript program to create a new string of specified copies (positive number) of a given string.</h5>
+        <p><samp></samp></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Create copies:
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <labelm-2>Insert word:</labelm-2>
+                  <input type="text" class="form-control m-2" id="inputText">
+                  <labelm-2>Number of copies:</labelm-2>
+                  <input type="number" class="form-control m-2" id="inputNumber">
+                  <button class="btn btn-primary m-2" onclick="solutionFunction()">Check!</button> 
+                </div>
+              </li>
+              <li class="list-group-item">Result: <span id="solution"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+
+      function solutionFunction() {
+
+        let inputText = document.querySelector('#inputText').value;
+        let inputNumber = document.querySelector('#inputNumber').value;
+
+        document.querySelector('#solution').innerHTML = inputText.repeat(inputNumber);
+         
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

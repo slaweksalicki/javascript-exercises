@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>JavaScript basic 064</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand">JavaScript basic</div>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h5 class="display-5"><span class="badge badge-info">064</span> Write a JavaScript program to concatenate two strings and return the result. If the length of the strings are not same then remove the characters from the longer string.</h5>
+        <p><samp></samp></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Concatenate two strings (remove the characters from the longer string):
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <input type="text" class="form-control m-2" id="inputText1">
+                  <input type="text" class="form-control m-2" id="inputText2">
+                  <button class="btn btn-primary m-2" onclick="solutionFunction()">Check!</button> 
+                </div>
+              </li>
+              <li class="list-group-item">Result: <span id="solution"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+
+      function solutionFunction() {
+
+        let inputText1 = document.querySelector('#inputText1').value;
+        let inputText2 = document.querySelector('#inputText2').value;
+        
+        if (inputText1.length < inputText2.length) {
+          document.querySelector('#solution').innerHTML = inputText1 + inputText2.substring(0, inputText1.length);
+        } else if (inputText2.length < inputText1.length) {
+          document.querySelector('#solution').innerHTML = inputText1.substring(0, inputText2.length) + inputText2;
+        } else {
+          document.querySelector('#solution').innerHTML = inputText1 + inputText2;
+        }
+         
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
