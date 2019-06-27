@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>JavaScript basic 086</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand">JavaScript basic</div>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h5 class="display-5"><span class="badge badge-info">086</span> Write a JavaScript program to find the types of a given angle.</h5>
+         <p><samp>Types of angles:
+          <ul>
+            <li>Acute angle: An angle between 0 and 90 degrees.</li>
+            <li>Right angle: An 90 degree angle.</li>
+            <li>Obtuse angle: An angle between 90 and 180 degrees.</li>
+            <li>Straight angle: A 180 degree angle.</li>
+          </ul>
+        </samp></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Check angle:
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <input type="number" class="form-control m-2" min="0" max="180" id="inputNumber1">
+                  <button class="btn btn-primary m-2" onclick="solutionFunction()">Replace!</button> 
+                </div>
+              </li>
+              <li class="list-group-item">Result: <span id="solution"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+
+      function solutionFunction() {
+
+        let inputNumber1 = parseInt(document.querySelector('#inputNumber1').value);
+        
+        let angle;
+
+        if (inputNumber1 < 90) {
+          angle = 'acute';
+        } else if (inputNumber1 === 90) {
+          angle = 'right';
+        } else if (inputNumber1 > 90 && inputNumber1 < 180) {
+          angle = 'obtuse';
+        } else if (inputNumber1 === 180) {
+          angle = 'straight';
+        }
+
+        document.querySelector('#solution').innerHTML = `This angle is ${angle}`;
+         
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>JavaScript basic 075</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div class="navbar-brand">JavaScript basic</div>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h5 class="display-5"><span class="badge badge-info">075</span> Write a JavaScript program to create a new array taking the middle elements of the two arrays of integer and each length 3.</h5>
+        <p><samp></samp></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Create a new array taking the middle elements of the two arrays of integer and each length 3.:
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <label class="m-2">Input first array:</label>
+                  <input type="number" class="form-control m-2" id="arr1num1">
+                  <input type="number" class="form-control m-2" id="arr1num2">
+                  <input type="number" class="form-control m-2" id="arr1num3">
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-inline form-row">
+                  <label class="m-2">Input second array:</label>
+                  <input type="number" class="form-control m-2" id="arr2num1">
+                  <input type="number" class="form-control m-2" id="arr2num2">
+                  <input type="number" class="form-control m-2" id="arr2num3">
+                  <button class="btn btn-primary m-2" onclick="solutionFunction()">Check!</button> 
+                </div>
+              </li>
+              <li class="list-group-item">Result: <span id="solution"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+
+      function solutionFunction() {
+
+        let arr1num1 = parseInt(document.querySelector('#arr1num1').value);
+        let arr1num2 = parseInt(document.querySelector('#arr1num2').value);
+        let arr1num3 = parseInt(document.querySelector('#arr1num3').value);
+        let arr2num1 = parseInt(document.querySelector('#arr2num1').value);
+        let arr2num2 = parseInt(document.querySelector('#arr2num2').value);
+        let arr2num3 = parseInt(document.querySelector('#arr2num3').value);
+
+        let array1 = [arr1num1, arr1num2, arr1num3];
+        let array2 = [arr2num1, arr2num2, arr2num3];
+        
+        let newArray = [array1[1], array2[1]]; 
+        
+        document.querySelector('#solution').innerHTML = newArray;
+         
+      }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
